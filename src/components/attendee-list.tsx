@@ -103,17 +103,17 @@ export const AttendeeList = ()=>{
                 <span>Página {page} de {totalPages}</span>
                 
                 <div className="flex gap-1.5">
-                  <IconButton>
-                    <ChevronsLeft onClick={goToFirstPage} className="size-4"/>
+                  <IconButton onClick={goToFirstPage} disabled={page === 1}>
+                    <ChevronsLeft className="size-4" />
                   </IconButton>
-                  <IconButton>
-                    <ChevronLeft onClick={goToPeviewsPage} className="size-4"/>
+                  <IconButton onClick={goToPeviewsPage} disabled={page === 1}>
+                    <ChevronLeft className="size-4"/>
                   </IconButton>
-                  <IconButton>
-                    <ChevronRight onClick={goToNextPage} className="size-4"/>
+                  <IconButton onClick={goToNextPage} disabled={page === totalPages}>
+                    <ChevronRight className="size-4"/>
                   </IconButton>
-                  <IconButton>
-                    <ChevronsRight onClick={goToLastPage} className="size-4"/>
+                  <IconButton onClick={goToLastPage} disabled={page === totalPages}>
+                    <ChevronsRight className="size-4"/>
                   </IconButton>
                 </div>
               </div>
